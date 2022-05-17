@@ -17,7 +17,7 @@ const Paginate = ({  proposalsPerPage,
           <p>
             1- {current.length} de {totalProposals} registros{" "}
           </p>
-        <Pagination.Prev className='numbers' onClick={() => setCurrentPage(currentPage - 1)} />
+        <Pagination.Prev className='numbers' onClick={() => setCurrentPage(currentPage - 1) } />
           {pageNumbers.map((number, i) => {
             const active = currentPage;
             return (
