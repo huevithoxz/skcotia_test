@@ -17,6 +17,11 @@ const useUser = () => {
           dispatch(setLoged(true));
           return response;
         }
+        else{
+            alert("Usuario o Contraseña incorrecto")
+          window.location.reload()
+           
+        }
       })
       .catch(function (error) {
         console.log(error);

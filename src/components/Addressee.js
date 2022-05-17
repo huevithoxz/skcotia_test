@@ -5,30 +5,39 @@ import { Table, Button } from "react-bootstrap";
 import Header from "./Header";
 import { setShowModal } from "../action";
 import NewPerson from "./NewPerson";
+import {AiOutlineDelete} from "react-icons/ai"
+import "../assets/style/sass/components/Addresseess.scss"
+import Search from "./Search";
 const Addressee = () => {
   const { getAddressess } = useGetList();
   const dispatch = useDispatch();
-  useEffect(() => {
-    getAddressess();
-  }, []);
   const list = useSelector((state) => state.addressees);
+  useEffect(() => {
+      
+      if(list.length === 0)
+      {getAddressess();}
+    
+  }, []);
+  
   const handleShowModal = () => {
     dispatch(setShowModal(true));
   };
-  console.log(list);
+
   return (
     <div>
       <NewPerson />
       <Header />
-      <h2>Destinatarios</h2>
-      <input placeholder="Buscar" />{" "}
+      <div className="addressee"><h2>Destinatarios</h2>
+      <Search/>
       <Button
+      variant="danger"
         onClick={() => {
           handleShowModal();
         }}
       >
         Agregar
       </Button>
+      <hr/>
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -37,6 +46,7 @@ const Addressee = () => {
             <th>Alias</th>
             <th>Banco</th>
             <th>Cuenta</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -49,13 +59,16 @@ const Addressee = () => {
                   <td>{value.name}</td>
                   <td>{value.alias}</td>
                   <td>{value.detail.bank_name}</td>
-                  <td>{value.detail.acc_numbr}</td>
+                  <td>{value.detail.acc_numbr} </td>
+                  <AiOutlineDelete className="delete" size={"40"}/>
                 </tr>
+               
               </>
             );
           })}
         </tbody>
-      </Table>
+      </Table></div>
+      
     </div>
   );
 };

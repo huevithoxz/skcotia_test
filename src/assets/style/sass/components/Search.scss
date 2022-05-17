@@ -1,0 +1,20 @@
+.find-description{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: justify;
+
+    width: 17rem;
+    padding: 0.3rem 0.3rem 0.3rem 0.5rem;
+}
+input:focus{
+    outline: none !important;
+}
+.icon
+{
+
+    position: absolute;
+    margin-left: -1.5rem;
+    margin-top: 0.5rem;
+    z-index: 3;
+    color: grey
+}
