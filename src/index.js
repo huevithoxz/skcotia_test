@@ -3,14 +3,16 @@ import  ReactDOM  from "react-dom/client";
 import {Provider} from 'react-redux'; 
 import {createStore,compose,applyMiddleware} from 'redux';
 import reducer from './reducers';
-import App from './App'
+import App from './routes/App'
 /* 
 estados inicial de redux + la store inicializada  */
 const initialState = 
 {
-    people : [],
-    tableList : [],
+    movements : [],
+    addressees : [],
     back: false, 
+    loged:false,
+    showModal:false,
 
     
 }

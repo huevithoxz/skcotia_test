@@ -1,40 +1,40 @@
-const reducer = (state,action) => {
-    switch(action.type) {
-        case 'SET_PEOPLE': 
-    return {
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "SET_MOVEMENTS":
+      return {
         ...state,
-        people:[...state.people, action.payload],
-    };
-    case 'SET_TABLE': 
-    return {
+        movements: [...state.movements, action.payload],
+      };
+    case "SET_ADDRESSESSEES":
+      return {
         ...state,
-        tableList:[...state.tableList, action.payload],
-    };
- 
-    case 'DELETE_USER':
-            return {
-                ...state,
-                people: state.people.filter(
-                    (items) => items.id !== action.payload,
-                ),
-            };
-            case 'FILTER':
-                return {
-                    ...state,
-                    people: state.people.filter(
-                        (items) => false,
-                    ),
-                };
-                case 'SET_BACK':
-                    return {
-                        ...state,
-                        back: action.payload
-                    };
-                    
-                  
-    default : 
-    return state;
-    }
-    
-}
-export default reducer
+        addressees: [...state.addressees, action.payload],
+      };
+
+   
+    case "FILTER":
+      return {
+        ...state,
+        people: state.people.filter((items) => false),
+      };
+    case "SET_BACK":
+      return {
+        ...state,
+        back: action.payload,
+      };
+      case "SET_MODAL":
+        return {
+          ...state,
+          showModal: action.payload,
+        };
+    case "SET_LOGED":
+      return {
+        ...state,
+        loged: action.payload,
+      };
+
+    default:
+      return state;
+  }
+};
+export default reducer;
