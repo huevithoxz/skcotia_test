@@ -10,13 +10,28 @@ const reducer = (state, action) => {
         ...state,
         addressees: [...state.addressees, action.payload],
       };
+      case "SET_COPYMOV":
+        return {
+          ...state,
+          copyMovements: [...state.copyMovements, action.payload],
+        };
+      case "SET_COPYADD":
+        return {
+          ...state,
+          copyAddressees: [...state.copyAddressees, action.payload],
+        };
 
    
-    case "FILTER":
+    case "FILTER_MOVEMENTS":
       return {
         ...state,
-        people: state.people.filter((items) => false),
+        movements: state.movements.filter((items) => false),
       };
+      case "FILTER_ADDRESSESSEES":
+        return {
+          ...state,
+          addressees: state.addressees.filter((items) => false),
+        };
     case "SET_BACK":
       return {
         ...state,
@@ -31,6 +46,14 @@ const reducer = (state, action) => {
       return {
         ...state,
         loged: action.payload,
+      };
+      
+    case 'DELETE_ADDRESSEE':
+      return {
+          ...state,
+          addressees: state.addressees.filter(
+              (items) => items.id !== action.payload,
+          ),
       };
 
     default:

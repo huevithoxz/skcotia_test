@@ -2,7 +2,7 @@ import React from 'react'
 import { setLoged } from '../action';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { setListMovements,setListAddressees } from '../action';
+import { setListMovements,setListAddressees,setCopyAdd,setCopyMov } from '../action';
 const useGetList = () => {
 
     const dispatch = useDispatch()
@@ -18,7 +18,9 @@ const useGetList = () => {
            console.log(response.data)
            response.data.map((value)=>
            {
-            dispatch(setListMovements(value))}
+            dispatch(setListMovements(value))
+            dispatch(setCopyMov(value))
+          }
            )
            return response
     
@@ -40,7 +42,10 @@ const useGetList = () => {
          console.log(response.data)
          response.data.map((value)=>
          {
-          dispatch(setListAddressees(value))}
+          dispatch(setListAddressees(value))
+          dispatch(setCopyAdd(value))
+        
+        }
          )
          return response
   

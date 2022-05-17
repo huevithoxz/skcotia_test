@@ -10,6 +10,8 @@ const initialState =
 {
     movements : [],
     addressees : [],
+    copyMovements:[],
+    copyAddressees:[],
     back: false, 
     loged:false,
     showModal:false,

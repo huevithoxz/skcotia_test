@@ -1,0 +1,48 @@
+.paginate
+{
+    border: 1px solid;
+border-color: #E0E0E0;
+background-color: #fff;
+  border-radius: 5px;
+ .numbers
+ {
+    margin-left: auto;
+ }
+  .pagination{  p
+    {
+      color: grey;
+      margin: 1rem;
+    }
+   
+    .page-item
+    {  overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    color: grey;
+    background-color: #fff;
+    border-color: #fff;
+   
+    margin-top: 0.6rem;
+    }
+    .page-item.active .page-link {
+        z-index: 3;
+        color: grey;
+        background-color: #fff;
+        border-top:#fff ;
+        border-right:#fff ;
+        border-left:#fff ;
+        border-color: red;
+    }
+    .page-link {
+        position: relative;
+        display: block;
+        color: grey;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #fff;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+}
+
+}
